@@ -52,10 +52,16 @@ public class Main {
             System.out.print("Enter the column number: ");
             int column = scanner.nextInt();
 
-            boolean canInsert = ticTacToe.canInsert(row, column);
+            boolean isValidMove = ticTacToe.isValidMove(row, column);
+            boolean canInsert = isValidMove && ticTacToe.canInsert(row, column);
 
             while (!canInsert) {
-                System.out.println("Please chose an empty space");
+
+                if (!isValidMove) {
+                    System.out.println("Please enter position that inside the board");
+                } else {
+                    System.out.println("Please chose an empty space");
+                }
 
                 System.out.print("Enter the row number: ");
                 row = scanner.nextInt();

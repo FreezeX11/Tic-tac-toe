@@ -32,6 +32,10 @@ public class TicTacToe {
         }
     }
 
+    public boolean isValidMove(int row, int column) {
+        return row >= 0 && row < board.length && column >= 0 && column < board[0].length;
+    }
+
     public boolean canInsert(int row, int column) {
         return this.board[row][column] == ' ';
     }
