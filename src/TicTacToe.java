@@ -19,6 +19,19 @@ public class TicTacToe {
         this.players = players;
     }
 
+    public void displayBoard() {
+        System.out.println("-------------");
+        for (char[] row : board) {
+            System.out.print("| ");
+            for (char element : row) {
+
+                System.out.print(element + " | ");
+            }
+            System.out.println();
+            System.out.println("-------------");
+        }
+    }
+
     public boolean canInsert(int row, int column) {
         return this.board[row][column] == ' ';
     }
